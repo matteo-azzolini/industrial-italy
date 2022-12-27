@@ -1,43 +1,61 @@
 <script lang="ts" setup>
-const map = ref();
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+// const map = ref();
 onMounted(() => {
-  new google.maps.Map(map, {
-    mapId: "f76147fe78f212d5",
-    center: { lat: 45.4053699, lng: 8.893036 },
-    zoom: 11,
-  })
+  const map = new L.Map(
+    // 'map',
+    document.getElementById('map') as HTMLElement,
+    {
+      center: new L.LatLng(45.4, 9.89),
+      zoom: 8,
+    }
+  );
+
+  L.tileLayer(
+    // 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+    'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?',
+    // 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png'
+    {
+      attribution:
+        '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
+      maxZoom: 19,
+    }
+  ).addTo(map);
+
+  const marker = L.marker([45.440193, 8.7827656]).addTo(map);
+
+  marker.on('click', () => map.flyTo([45.440193, 8.7827656], 11));
+
+  // function navigate(){
+  //   return navigateTo({
+  //     path: '/search',
+  //     query: {
+  //       name: name.value,
+  //       type: type.value
+  //     }
+  //   })
+  // }
 });
-// if (process.client) {
-//   declare global {
-//     interface Window {
-//       initMap: () => void;
-//     }
-//   }
-
-//   function initMap(): void {
-//     new google.maps.Map(
-//       document.getElementById("map") as HTMLElement,
-//       {
-//         mapId: "8e0a97af9386fef",
-//         center: { lat: 48.85, lng: 2.35 },
-//         zoom: 12,
-//       } as google.maps.MapOptions
-//     );
-//   }
-
-
-//   window.initMap = initMap;
-// }
 </script>
 
 <template>
-  <div id="map" ref="map">
-  </div>
+  <div id="map" ref="map" />
 </template>
 
 <style>
 #map {
   height: 100%;
-  width: 100%;
+  width: 100vw;
+}
+
+.leaflet-control-attribution {
+  background-color: black !important;
+  opacity: 50%;
+}
+
+.leaflet-control-attribution a {
+  color: white !important;
 }
 </style>

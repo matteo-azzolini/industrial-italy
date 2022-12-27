@@ -6,14 +6,18 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prettier": "npx run prettier --ignore-path .gitignore"
+    "format": "npx prettier --write --ignore-path .gitignore"
   },
   "dependencies": {
     "leaflet": "^1.9.3"
   },
   "devDependencies": {
     "@types/leaflet": "^1.9.0",
+    "lint-staged": "^13.1.0",
     "nuxt": "3.0.0",
     "prettier": "2.8.1"
+  },
+  "lint-staged": {
+    "*": "npm run format"
   }
 }
