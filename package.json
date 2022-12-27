@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prettier": "npx run prettier --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.3"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.0",
+    "nuxt": "3.0.0",
+    "prettier": "2.8.1"
+  }
+}
