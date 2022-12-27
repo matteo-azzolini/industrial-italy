@@ -4,10 +4,12 @@
   </NuxtLayout>
 </template>
 
-<style>
+<style lang="postcss">
 html,
 body,
 #__nuxt {
+  @apply bg-black text-white;
+
   height: 100%;
   margin: 0;
 }

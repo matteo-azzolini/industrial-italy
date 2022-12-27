@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false,
-  // target: 'static',
+  modules: ['@nuxtjs/tailwindcss'],
+
   app: {
     head: {
       title: 'Nuxt Starter',
