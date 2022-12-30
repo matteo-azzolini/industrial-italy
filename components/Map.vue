@@ -2,19 +2,24 @@
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// const MAP_TILE = "https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png";
-const MAP_TILE =
-  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
-// const MAP_TILE = "https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png";
+// const MAP_TILE = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
+const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+// const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
 const MAP_ATTRIBUTION =
   '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>';
+
+const route = useRoute();
+
+const lat = +route.params.lat || 43.3;
+const lng = +route.params.lng || 11.89;
+const zoom = +route.params.zoom || 7;
 
 const container = ref<HTMLElement>();
 
 onMounted(() => {
   const map = new L.Map(container.value!, {
-    center: new L.LatLng(45.4, 9.89),
-    zoom: 8,
+    center: new L.LatLng(lat, lng),
+    zoom,
   });
 
   L.tileLayer(MAP_TILE, {
@@ -22,9 +27,40 @@ onMounted(() => {
     maxZoom: 19,
   }).addTo(map);
 
-  const marker = L.marker([45.440193, 8.7827656]).addTo(map);
+  // 45.440193,8.7850616
+  // sarpom san martino NO
+  // Via Vigevano, 43, 28069 San Martino NO
+  const marker1 = L.marker([45.440193, 8.7827656]).addTo(map);
 
-  marker.on('click', () => map.flyTo([45.440193, 8.7827656], 11));
+  marker1.on('click', () => {
+    map.flyTo([45.440193, 8.7827656], 11);
+
+    navigateTo({
+      path: '/45.440193,8.7827656,11',
+    });
+  });
+
+  // ITELYUM landriano PV
+  const marker2 = L.marker([45.3048723, 9.2484908]).addTo(map);
+
+  marker2.on('click', () => {
+    map.flyTo([45.3048723, 9.2484908], 11);
+  });
+
+  // Villapana
+  // Via Pana, 238/244, 48018 Faenza RA
+
+  const marker3 = L.marker([44.3358694, 11.8686717]).addTo(map);
+
+  marker3.on('click', () => {
+    map.flyTo([44.3358694, 11.8686717], 11);
+  });
+
+  // Ilva
+  // Via Appia SS km 648, 74123 Taranto TA
+  const marker4 = L.marker([40.5031921, 17.2202768]).addTo(map);
+
+  marker4.on('click', () => map.flyTo([40.5031921, 17.2202768], 11));
 
   // function navigate(){
   //   return navigateTo({
@@ -43,6 +79,10 @@ onMounted(() => {
 </template>
 
 <style lang="postcss">
+.leaflet-control-zoom {
+  margin-top: 50px !important;
+}
+
 .leaflet-control-attribution {
   background-color: black !important;
   opacity: 50%;

@@ -9,21 +9,25 @@
   </main>
 </template>
 
-<style>
+<style lang="postcss">
 nav {
-  background: black;
-  color: white;
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: flex-end;
-}
+  @apply absolute;
+  @apply w-full;
+  @apply flex justify-end;
+  @apply px-10;
+  height: 50px;
+  z-index: 9999;
 
-nav a {
-  padding: 0.5rem 2rem;
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5) 90%);
+
+  a {
+    @apply py-2 px-6;
+    @apply text-xl text-white;
+  }
 }
 
 main {
-  height: calc(100% - 30px);
+  /* height: calc(100% - 50px); */
+  @apply h-full;
 }
 </style>

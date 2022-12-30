@@ -1,5 +1,6 @@
 <template>
-  <div class="prose prose-invert overflow-x-auto max-w-5xl mx-auto">
+  <!-- <div class="asd"> -->
+  <div class="prose prose-invert overflow-x-auto pt-20 max-w-5xl mx-auto">
     <h1>I like industrial buildings</h1>
 
     <p>
@@ -25,4 +26,17 @@
       <li>qwe</li>
     </ul>
   </div>
+  <!-- </div> -->
+
+  <!-- <ClientOnly>
+    <Map />
+  </ClientOnly> -->
 </template>
+
+<style lang="postcss">
+/* .asd {
+  @apply bg-black opacity-70;
+  @apply absolute h-full w-full;
+  z-index: 8888;
+} */
+</style>
