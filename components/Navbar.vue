@@ -2,11 +2,8 @@
   <nav>
     <NuxtLink to="/">Map</NuxtLink>
     <NuxtLink to="/about">About</NuxtLink>
+    <NuxtLink to="/page2">Page 2</NuxtLink>
   </nav>
-
-  <main>
-    <slot name="default" />
-  </main>
 </template>
 
 <style lang="postcss">
@@ -24,10 +21,5 @@ nav {
     @apply py-2 px-6;
     @apply text-xl text-white;
   }
-}
-
-main {
-  /* height: calc(100% - 50px); */
-  @apply h-full;
 }
 </style>
