@@ -19,7 +19,7 @@
     </div>
 
     <div class="h-full overflow-hidden">
-      <img :src="'/itelyum.jpeg'" class="max-h-full" />
+      <img src="/itelyum.jpeg" class="max-h-full">
     </div>
   </div>
 </template>

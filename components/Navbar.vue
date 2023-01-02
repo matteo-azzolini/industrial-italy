@@ -1,8 +1,14 @@
 <template>
   <nav>
-    <NuxtLink to="/">Map</NuxtLink>
-    <NuxtLink to="/about">About</NuxtLink>
-    <NuxtLink to="/page2">Page 2</NuxtLink>
+    <NuxtLink to="/">
+      Map
+    </NuxtLink>
+    <NuxtLink to="/about">
+      About
+    </NuxtLink>
+    <NuxtLink to="/page2">
+      Page 2
+    </NuxtLink>
   </nav>
 </template>
 

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { locations } from '~~/data/locations';
+import { locations } from '~/data/locations';
 
 const route = useRoute();
 
@@ -13,16 +13,27 @@ const location = locations[locationKey];
 
 <template>
   <div class="panel border-l border-gray-900">
-    <Icon name="carbon-close" size="4em" class="absolute top-10 cursor-pointer" />
+    <Icon
+      name="carbon-close"
+      size="4em"
+      class="absolute top-10 cursor-pointer"
+    />
 
-    <img :src="location.img" />
+    <img :src="location.img">
 
     <div class="mt-8 mx-8">
-      <h2 class="text-2xl font-semibold">{{ location.name }}</h2>
+      <h2 class="text-2xl font-semibold">
+        {{ location.name }}
+      </h2>
 
-      <NuxtLink to="https://goo.gl/maps/hhPBDA4Th1kaQmFKA" class="hover:underline flex items-center" target="_blank"
-        >{{ location.address }}<Icon name="humbleicons:external-link" class="text-gray-400"
-      /></NuxtLink>
+      <NuxtLink
+        to="https://goo.gl/maps/hhPBDA4Th1kaQmFKA"
+        class="hover:underline flex items-center"
+        target="_blank"
+      >
+        {{ location.address }}
+        <Icon name="humbleicons:external-link" class="text-gray-400" />
+      </NuxtLink>
     </div>
   </div>
 </template>
