@@ -20,7 +20,7 @@ export const locations: Record<string, Location> = {
     name: 'Itelyum',
     lat: 45.3078354,
     lng: 9.2530549,
-    img: '/5:4cold.jpeg',
+    img: '/5_4cold.jpeg',
     address: 'Via Stanislao Intini, 2, 27015 Landriano PV',
     link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',
   },

@@ -45,3 +45,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 nuxt 3
 ssr (state condiviso e transizione tra pagine)
+- ssr (generazione dettaglio location lato server)(seo)
+- route prerendering? (quando fai la build, generare dalle location presenti?)
+- transizioni tra pagine diverse
+- mobile
