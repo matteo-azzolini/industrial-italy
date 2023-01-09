@@ -1,3 +1,4 @@
+// @anfu
 process.env.ESLINT_TSCONFIG = 'tsconfig.json';
 
 module.exports = {
@@ -5,5 +6,6 @@ module.exports = {
   rules: {
     'semi': ['error', 'always'],
     '@typescript-eslint/semi': ['error', 'always'],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
   },
 };

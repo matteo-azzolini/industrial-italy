@@ -1,11 +1,11 @@
-export interface Location {
+export type Location = {
   name: string
   lat: number
   lng: number
   img: string
   address: string
   link: string
-}
+};
 
 export const locations: Record<string, Location> = {
   '45.440193,8.7850616': {

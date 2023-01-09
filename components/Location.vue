@@ -1,14 +1,5 @@
 <script lang="ts" setup>
-import { locations } from '~/data/locations';
-
-const route = useRoute();
-
-const lat = +route.params.lat;
-const lng = +route.params.lng;
-
-const locationKey = `${lat},${lng}`;
-
-const location = locations[locationKey];
+const { location } = useGetLocation();
 
 const paneOpen = ref(true);
 </script>
@@ -19,7 +10,7 @@ const paneOpen = ref(true);
       <Icon
         name="carbon-close"
         size="4em"
-        class="absolute top-10 cursor-pointer"
+        class="absolute top-10 cursor-pointer text-gray-300 hover:text-white"
         @click="paneOpen = false"
       />
 
@@ -30,14 +21,13 @@ const paneOpen = ref(true);
           {{ location.name }}
         </h2>
 
-        <!-- TODO dynamic link -->
         <NuxtLink
-          to="https://goo.gl/maps/hhPBDA4Th1kaQmFKA"
-          class="hover:underline flex items-center space-x-2"
+          :to="location.link"
+          class="group flex items-center space-x-2"
           target="_blank"
         >
-          <span class="block">{{ location.address }}</span>
-          <Icon name="humbleicons:external-link" class="text-gray-400" />
+          <span class="block group-hover:underline ">{{ location.address }}</span>
+          <Icon name="humbleicons:external-link" class="text-gray-400 group-hover:text-white" />
         </NuxtLink>
       </div>
     </div>

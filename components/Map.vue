@@ -9,11 +9,15 @@ const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 // const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
 const MAP_ATTRIBUTION = '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>';
 
-const route = useRoute();
+const {
+  lat: routeLat,
+  lng: routeLng,
+  location,
+} = useGetLocation();
 
-const lat = +route.params.lat || 43.3;
-const lng = +route.params.lng + 0.35 || 11.89;
-const zoom = route.params.lat ? 11 : 7;
+const lat = routeLat || 43.3;
+const lng = routeLng ? routeLng + 0.35 : 11.89;
+const zoom = location !== undefined ? 11 : 7;
 
 const container = ref<HTMLElement>();
 
