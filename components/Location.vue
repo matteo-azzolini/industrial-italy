@@ -9,33 +9,39 @@ const lng = +route.params.lng;
 const locationKey = `${lat},${lng}`;
 
 const location = locations[locationKey];
+
+const paneOpen = ref(true);
 </script>
 
 <template>
-  <div class="panel border-l border-gray-900">
-    <Icon
-      name="carbon-close"
-      size="4em"
-      class="absolute top-10 cursor-pointer"
-    />
+  <Transition name="slide" appear>
+    <div v-if="paneOpen" class="panel border-l border-gray-900">
+      <Icon
+        name="carbon-close"
+        size="4em"
+        class="absolute top-10 cursor-pointer"
+        @click="paneOpen = false"
+      />
 
-    <img :src="location.img">
+      <img :src="location.img">
 
-    <div class="mt-8 mx-8">
-      <h2 class="text-2xl font-semibold">
-        {{ location.name }}
-      </h2>
+      <div class="mt-8 mx-8 space-y-2">
+        <h2 class="text-2xl font-semibold">
+          {{ location.name }}
+        </h2>
 
-      <NuxtLink
-        to="https://goo.gl/maps/hhPBDA4Th1kaQmFKA"
-        class="hover:underline flex items-center"
-        target="_blank"
-      >
-        {{ location.address }}
-        <Icon name="humbleicons:external-link" class="text-gray-400" />
-      </NuxtLink>
+        <!-- TODO dynamic link -->
+        <NuxtLink
+          to="https://goo.gl/maps/hhPBDA4Th1kaQmFKA"
+          class="hover:underline flex items-center space-x-2"
+          target="_blank"
+        >
+          <span class="block">{{ location.address }}</span>
+          <Icon name="humbleicons:external-link" class="text-gray-400" />
+        </NuxtLink>
+      </div>
     </div>
-  </div>
+  </Transition>
 </template>
 
 <style lang="postcss">
@@ -58,5 +64,18 @@ const location = locations[locationKey];
     /* transform: translate(-51%, -51%); */
     /* z-index: 9999; */
   }
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.5s ease;
+}
+
+.slide-enter-from {
+  @apply -translate-x-2 opacity-0;
+}
+
+.slide-leave-to {
+  @apply -translate-x-2 opacity-0;
 }
 </style>

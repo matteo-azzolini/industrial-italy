@@ -26,12 +26,19 @@ onMounted(() => {
   L.tileLayer(MAP_TILE, {
     attribution: MAP_ATTRIBUTION,
     maxZoom: 19,
+    minZoom: 5,
   }).addTo(map);
 
   function addToMap(location: Location) {
     const marker = L.marker([location.lat, location.lng]).addTo(map);
 
-    // map.flyTo([44.3358694, 11.8686717], 11);
+    // TODO gestire click pagina aperta
+
+    // marker.on('click', () => map.flyTo([location.lat, location.lng], 11));
+
+    // if (route.path === `/${location.lat.toString()},${location.lng.toString()}`) {
+    //   alert('ciao');
+    // }
 
     marker.on('click', () => navigateTo({
       path: `/${location.lat.toString()},${location.lng.toString()}`,
@@ -39,6 +46,14 @@ onMounted(() => {
   }
 
   Object.values(locations).forEach(addToMap);
+
+  // TODO clean
+  setTimeout(() => map.invalidateSize(true), 500);
+  // map.invalidateSize(true);
+
+  // https://stackoverflow.com/questions/73870844/nuxt-vue3-leaflet-window-is-not-defined
+
+  // https://github.com/vue-leaflet/vue-leaflet
 });
 </script>
 

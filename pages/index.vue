@@ -1,11 +1,7 @@
-<script setup lang="ts">
-definePageMeta({
-  pageTransition: false,
-});
-</script>
-
 <template>
-  <ClientOnly>
-    <Map />
-  </ClientOnly>
+  <div class="h-full">
+    <ClientOnly fallback-tag="span" fallback="Loading comments...">
+      <Map />
+    </ClientOnly>
+  </div>
 </template>

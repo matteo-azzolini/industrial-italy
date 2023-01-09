@@ -31,4 +31,7 @@ export const locations: Record<string, Location> = {
   // 40.5031921, 17.2202768
   // Ilva
   // Via Appia SS km 648, 74123 Taranto TA
+
+  // Alcatara SPA
+  // San Liberato / Narni
 };

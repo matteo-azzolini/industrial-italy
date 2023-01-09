@@ -18,7 +18,8 @@ body,
 
 main {
   /* height: calc(100% - 50px); */
-  @apply h-full;
+  /* TODO overflow dovuto all'animazione */
+  @apply h-full overflow-hidden;
 }
 
 .page-enter-active,

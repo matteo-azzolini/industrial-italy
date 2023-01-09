@@ -4,6 +4,8 @@ export default defineNuxtConfig({
 
   modules: ['@nuxtjs/tailwindcss', 'nuxt-icon'],
 
+  // css: ['leaflet/dist/leaflet.css'],
+
   app: {
     // keepalive: true,
     head: {
@@ -33,7 +35,7 @@ export default defineNuxtConfig({
     // pageTransition: {
     //   name: 'page',
     //   mode: 'out-in',
-    //   // duration: 300,
+    //   duration: 1000,
     // },
   },
 });
