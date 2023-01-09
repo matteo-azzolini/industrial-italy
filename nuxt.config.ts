@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
   ssr: true,
 
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    'nuxt-icon',
+  ],
 
   // css: ['leaflet/dist/leaflet.css'],
 
@@ -19,7 +22,7 @@ export default defineNuxtConfig({
         { hid: 'description', name: 'description', content: '' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
         // {
         //   rel: 'stylesheet',
         //   href: 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
@@ -37,5 +40,9 @@ export default defineNuxtConfig({
     //   mode: 'out-in',
     //   duration: 1000,
     // },
+  },
+
+  typescript: {
+    strict: true,
   },
 });
