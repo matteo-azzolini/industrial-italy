@@ -1,17 +1,18 @@
 <script lang="ts" setup>
-const { location } = useGetLocation();
+defineProps<{ modelValue: boolean }>();
+defineEmits(['update:modelValue']);
 
-const paneOpen = ref(true);
+const { location } = useGetLocation();
 </script>
 
 <template>
   <Transition name="slide" appear>
-    <div v-if="paneOpen" class="panel border-l border-gray-900">
+    <div v-if="modelValue" class="panel border-l border-gray-900">
       <Icon
         name="carbon-close"
         size="4em"
         class="absolute top-10 cursor-pointer text-gray-300 hover:text-white"
-        @click="paneOpen = false"
+        @click="$emit('update:modelValue', false)"
       />
 
       <img :src="location.img">
@@ -38,8 +39,13 @@ const paneOpen = ref(true);
 .panel {
   @apply absolute right-0 overflow-auto;
   /* @apply pt-20 px-4; */
-  @apply h-full w-1/2;
+  /* @apply h-full;
+  @apply  w-full md:w-3/4 lg:w-2/3 xl:max-w-4xl; */
+  @apply h-full w-full md:w-3/4 lg:w-2/3 xl:w-1/2;
   @apply bg-black;
+  background-color: #0F0F0F;
+  /* @apply opacity-80; */
+  /* background-color: #0F0F0F; */
   @apply shadow;
   max-height: 100%;
   /* @apply opacity-80; */

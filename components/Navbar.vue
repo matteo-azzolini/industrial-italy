@@ -21,7 +21,7 @@ nav {
   height: 50px;
   z-index: 9999;
 
-  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5) 90%);
+  background: linear-gradient(#000, #0F0F0F00 90%);
 
   a {
     @apply py-2 px-6;

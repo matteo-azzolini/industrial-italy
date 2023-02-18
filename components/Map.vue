@@ -4,6 +4,8 @@ import L from 'leaflet';
 import type { Location } from '~/data/locations';
 import { locations } from '~/data/locations';
 
+const emit = defineEmits(['selectLocation']);
+
 // const MAP_TILE = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
 const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
 // const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png';
@@ -44,9 +46,12 @@ onMounted(() => {
     //   alert('ciao');
     // }
 
-    marker.on('click', () => navigateTo({
-      path: `/${location.lat.toString()},${location.lng.toString()}`,
-    }));
+    marker.on('click', () => {
+      emit('selectLocation');
+      navigateTo({
+        path: `/${location.lat.toString()},${location.lng.toString()}`,
+      });
+    });
   }
 
   Object.values(locations).forEach(addToMap);

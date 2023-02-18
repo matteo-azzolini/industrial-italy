@@ -8,20 +8,38 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="prose prose-invert overflow-x-auto pt-20 max-w-5xl mx-auto">
+  <div class="prose prose-invert overflow-x-auto pt-20 sm:max-w-2xl max-w-5xl mx-auto">
     <h1>I like industrial buildings</h1>
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tellus lectus, semper nec suscipit quis, scelerisque a
-      metus. Nullam fermentum tincidunt orci at ornare. Nullam varius viverra nunc et euismod. Pellentesque sagittis
-      tincidunt tincidunt. Pellentesque porta vel diam sit amet accumsan. Donec finibus, est in convallis ultricies,
-      mauris purus luctus justo, vel venenatis nunc nisl a elit. Suspendisse sit amet sem quis ante facilisis vehicula.
-      Ut vitae faucibus odio. Donec cursus semper magna, id pharetra odio sagittis sit amet. Nullam dapibus urna ac mi
-      gravida, sed blandit ipsum lobortis. Ut pellentesque justo orci, vel suscipit sapien tristique eu. Ut mi nisl,
-      fermentum fermentum mattis sit amet, pellentesque ut elit. Proin euismod diam id lectus rutrum accumsan. Nunc sit
-      amet justo porttitor, mattis dolor a, tristique ante. Phasellus tempus metus ac erat aliquet, at dignissim urna
-      laoreet.
+      As a night owl I enjoy staying up till late night.
     </p>
+    <p>
+      I appreciate the quiet at night and I find it reconciles my thinking.
+    </p>
+    <p>
+      From time to time I like to take a ride and explore the area and I have always been
+      been fascinated by the industrial structures.
+      Maybe it's the lights
+    </p>
+    <p>
+      maybe it's the fumes, maybe it's because it's the only activity
+      production that takes place at that hour..
+      As fascinating as they are frightening.
+      With this site I want to point out some destinations that may be
+      useful for other night owl explorers as my self.
+    </p>
+
+    <!-- <p>
+      Apprezzo la quiete che c'è di notte, trovo che concilia il mio pensiero.
+      Ogni tanto mi piace take a ride ed esplorare la zona e son semper
+      stato affascinato dalle strutture industriali.
+      Sarà per le luci, sarà per fumi, sarà perchè è l'unica attività
+      produttiva che avviene a quell'ora..
+      Tanto affascinanti quanto spaventose.
+      Con questo sito ho voglio segnalare alcune mete che possono essere
+      utili per altri night owl explorer as my self.
+    </p> -->
 
     <h2>Contact</h2>
 
@@ -33,6 +51,12 @@ definePageMeta({
 </template>
 
 <style lang="postcss">
+main {
+  /* @apply bg-gray-900; */
+  @apply bg-black;
+  background-color: #0F0F0F;
+  /* background-color: #151515; */
+}
 /* .asd {
   @apply bg-black opacity-70;
   @apply absolute h-full w-full;
