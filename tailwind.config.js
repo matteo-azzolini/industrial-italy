@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,7 +8,17 @@ module.exports = {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        // black: '#151515',
+        black: '#0F0F0F',
+        gray: colors.neutral,
+      },
+
+    },
+    fontFamily: {
+      sans: ['Inter', 'sans-serif'],
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

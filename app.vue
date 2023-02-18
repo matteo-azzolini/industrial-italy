@@ -14,6 +14,8 @@ body,
 
   height: 100%;
   margin: 0;
+
+  font-size: 16px;
 }
 
 main {
