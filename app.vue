@@ -7,10 +7,19 @@
 </template>
 
 <style lang="postcss">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --soft-black: #0F0F0F;
+  /* --soft-black: #151515; */
+}
+
 html,
 body,
 #__nuxt {
-  @apply bg-black text-white;
+  @apply bg-soft-black text-white;
 
   height: 100%;
   margin: 0;

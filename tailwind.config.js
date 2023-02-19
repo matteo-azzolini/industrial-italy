@@ -10,9 +10,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // black: '#151515',
-        black: '#0F0F0F',
-        gray: colors.neutral,
+        'gray': colors.neutral,
+        'soft-black': 'var(--soft-black)',
       },
 
     },

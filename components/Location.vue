@@ -42,13 +42,9 @@ const { location } = useGetLocation();
   /* @apply h-full;
   @apply  w-full md:w-3/4 lg:w-2/3 xl:max-w-4xl; */
   @apply h-full w-full md:w-3/4 lg:w-2/3 xl:w-1/2;
-  @apply bg-black;
-  background-color: #0F0F0F;
-  /* @apply opacity-80; */
-  /* background-color: #0F0F0F; */
+  @apply bg-soft-black;
   @apply shadow;
   max-height: 100%;
-  /* @apply opacity-80; */
   z-index: 9998;
 
   img {

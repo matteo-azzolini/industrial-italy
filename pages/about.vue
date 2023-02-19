@@ -49,17 +49,3 @@ definePageMeta({
     </ul>
   </div>
 </template>
-
-<style lang="postcss">
-main {
-  /* @apply bg-gray-900; */
-  @apply bg-black;
-  background-color: #0F0F0F;
-  /* background-color: #151515; */
-}
-/* .asd {
-  @apply bg-black opacity-70;
-  @apply absolute h-full w-full;
-  z-index: 8888;
-} */
-</style>
