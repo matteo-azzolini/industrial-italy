@@ -1,6 +1,6 @@
 <template>
   <div class="h-full">
-    <ClientOnly fallback-tag="span" fallback="Loading comments...">
+    <ClientOnly fallback-tag="span" fallback="...">
       <Map />
     </ClientOnly>
   </div>

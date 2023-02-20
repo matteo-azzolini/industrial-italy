@@ -1,13 +1,15 @@
 <template>
   <nav>
-    <NuxtLink to="/">
+    <!--
+      TODO workaround
+      <a> over nuxt link to reload position
+      ref https://github.com/nuxt/nuxt/issues/7369#issuecomment-898604704
+    -->
+    <a href="/">
       Map
-    </NuxtLink>
+    </a>
     <NuxtLink to="/about">
       About
-    </NuxtLink>
-    <NuxtLink to="/page2">
-      Page 2
     </NuxtLink>
   </nav>
 </template>
