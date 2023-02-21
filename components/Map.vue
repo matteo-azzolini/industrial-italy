@@ -17,9 +17,11 @@ const {
   location,
 } = useGetLocation();
 
+const { isMobile } = useDevice();
+
 const lat = routeLat || 43.3;
 const lng = routeLng ? routeLng + 0.35 : 11.89;
-const zoom = location !== undefined ? 11 : 7;
+const zoom = isMobile ? 5.5 : location !== undefined ? 11 : 7;
 
 const container = ref<HTMLElement>();
 
@@ -27,6 +29,8 @@ onMounted(() => {
   const map = new L.Map(container.value!, {
     center: new L.LatLng(lat, lng),
     zoom,
+    zoomSnap: 0.25,
+    zoomDelta: 1,
   });
 
   L.tileLayer(MAP_TILE, {
