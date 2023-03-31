@@ -8,18 +8,26 @@ export type Location = {
 };
 
 export const locations: Record<string, Location> = {
-  '45.440193,8.7850616': {
-    name: 'Sarpom',
-    lat: 45.440193,
-    lng: 8.7850616,
-    img: '/sarpom.jpg',
-    address: 'Via Vigevano, 43, 28069 San Martino NO',
-    link: 'https://goo.gl/maps/hhPBDA4Th1kaQmFKA',
-  },
-  '45.3078354,9.2530549': {
+  // '45.440193,8.7850616': {
+  //   name: 'Sarpom',
+  //   lat: 45.440193,
+  //   lng: 8.7850616,
+  //   img: '/sarpom.jpg',
+  //   address: 'Via Vigevano, 43, 28069 San Martino NO',
+  //   link: 'https://goo.gl/maps/hhPBDA4Th1kaQmFKA',
+  // },
+  // '45.3078354,9.2530549': {
+  //   name: 'Itelyum',
+  //   lat: 45.3078354,
+  //   lng: 9.2530549,
+  //   img: '/5_4cold.jpeg',
+  //   address: 'Via Stanislao Intini, 2, 27015 Landriano PV',
+  //   link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',
+  // },
+  '44.544713,10.8030309': {
     name: 'Itelyum',
-    lat: 45.3078354,
-    lng: 9.2530549,
+    lat: 44.544713,
+    lng: 10.8030309,
     img: '/5_4cold.jpeg',
     address: 'Via Stanislao Intini, 2, 27015 Landriano PV',
     link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',

@@ -1,4 +1,6 @@
 <template>
+  <!-- <Icon name="carbon:menu" />
+  <nav class="flex justify-evenly md:justify-end"> -->
   <nav>
     <!--
       TODO workaround
@@ -22,6 +24,7 @@ nav {
   @apply px-10;
   height: 50px;
   z-index: 9999;
+  @apply h-16;
 
   background: linear-gradient(#000, #0F0F0F00 90%);
 
