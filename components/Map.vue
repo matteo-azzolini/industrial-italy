@@ -6,6 +6,7 @@ import { locations } from '~/data/locations';
 
 const emit = defineEmits(['selectLocation']);
 
+const showLuci = ref(false);
 const showLogo = ref(false);
 
 function togglelogo() {
@@ -48,7 +49,8 @@ onMounted(() => {
   const period = 3000;
 
   function step(zoom: number, duration: number) {
-    map.flyTo([lat, lng], zoom, {
+    map.flyTo([lat + 0.005, lng], zoom, {
+    // map.flyTo([lat + 0.009, lng], zoom, {
       animate: true,
       duration,
       easeLinearity: 1,
@@ -65,8 +67,12 @@ onMounted(() => {
   setTimeout(() => step(14, 2), 3000);
 
   setTimeout(() => {
-    showLogo.value = true;
+    showLuci.value = true;
   }, 5000);
+
+  setTimeout(() => {
+    showLogo.value = true;
+  }, 5500);
 
   const icon = L.icon({
     iconUrl: 'marker-icon.png',
@@ -96,11 +102,14 @@ onMounted(() => {
     CLICK
   </button> -->
 
-  <div class="asd2 w-full h-full bg-transparent absolute">
-    <Transition name="slide">
-      <img v-if="showLogo" id="logo" src="/logo-esteso.png">
-    </Transition>
-  </div>
+  <!-- <div class="asd2bg-transparent absolute"> -->
+  <Transition name="slide">
+    <img v-if="showLogo" id="logo" src="/logo-esteso.png">
+  </Transition>
+  <!-- <Transition name="slide">
+    <img v-if="showLuci" id="luci" src="/luci4.png">
+  </Transition> -->
+  <!-- </div> -->
 
   <div ref="container" class="w-full h-full" />
 </template>
@@ -108,30 +117,51 @@ onMounted(() => {
 <style lang="postcss">
 .leaflet-control-zoom {
   margin-top: 50px !important;
-  display: hidden;
+  display: none !important;
 }
 
 .leaflet-control-attribution {
   background-color: black !important;
   opacity: 50%;
-  display: hidden;
+  display: none;
 }
 
 .leaflet-control-attribution a {
   color: white !important;
-  display: hidden;
+  display: none;
 }
 
 #logo {
   @apply absolute;
-  height: 600px;
-  width: 600px;
-  top: 4em;
+  height: auto;
+  width: auto;
+  top: 12em;
+  /* bottom: 4;
+  margin-top: auto;
+  margin-bottom: auto; */
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   z-index: 9999;
+}
+
+#luci {
+  @apply absolute opacity-40;
+  @apply translate-x-1;
+  @apply translate-y-0.5;
+  height: auto;
+  width: auto;
+  top: 20em;
+  /* bottom: 0; */
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 9998;
+  /* @apply skew-y-12; */
 }
 
 .slide-enter-active {
