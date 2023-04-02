@@ -92,9 +92,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <button class="asd absolute bg-white top-0 right-0 z-50" @click="togglelogo()">
+  <!-- <button class="asd absolute bg-white top-0 right-0 z-50" @click="togglelogo()">
     CLICK
-  </button>
+  </button> -->
 
   <div class="asd2 w-full h-full bg-transparent absolute">
     <Transition name="slide">
