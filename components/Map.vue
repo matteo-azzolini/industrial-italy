@@ -98,7 +98,7 @@ onMounted(() => {
 
   <div class="asd2 w-full h-full bg-transparent absolute">
     <Transition name="slide">
-      <img v-if="showLogo" id="logo" src="/photo_2023-03-31_19-56-35.jpg">
+      <img v-if="showLogo" id="logo" src="/logo-esteso.png">
     </Transition>
   </div>
 
@@ -123,10 +123,10 @@ onMounted(() => {
 }
 
 #logo {
-  @apply absolute opacity-60;
-  height: 450px;
-  width: 450px;
-  top: 8em;
+  @apply absolute;
+  height: 600px;
+  width: 600px;
+  top: 4em;
   left: 0;
   right: 0;
   margin-left: auto;
