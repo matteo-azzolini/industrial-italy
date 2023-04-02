@@ -68,8 +68,15 @@ onMounted(() => {
     showLogo.value = true;
   }, 5000);
 
+  const icon = L.icon({
+    iconUrl: 'marker-icon.png',
+    iconAnchor: [10, 40],
+  });
+
   function addToMap(location: Location) {
-    const marker = L.marker([location.lat, location.lng]).addTo(map);
+    const marker = L.marker([location.lat, location.lng], {
+      icon,
+    }).addTo(map);
   }
 
   Object.values(locations).forEach(addToMap);
@@ -120,7 +127,10 @@ onMounted(() => {
   height: 450px;
   width: 450px;
   top: 8em;
-  left: 47em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 9999;
 }
 

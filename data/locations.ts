@@ -25,7 +25,7 @@ export const locations: Record<string, Location> = {
   //   link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',
   // },
   '44.544713,10.8030309': {
-    name: 'Itelyum',
+    name: 'Scarabeo Entertainment',
     lat: 44.544713,
     lng: 10.8030309,
     img: '/5_4cold.jpeg',
