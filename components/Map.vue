@@ -35,8 +35,13 @@ onMounted(() => {
     minZoom: 5,
   }).addTo(map);
 
+  const icon = L.icon({
+    iconUrl: 'marker-icon.png',
+    iconAnchor: [10, 40],
+  });
+
   function addToMap(location: Location) {
-    const marker = L.marker([location.lat, location.lng]).addTo(map);
+    const marker = L.marker([location.lat, location.lng], { icon }).addTo(map);
 
     // TODO gestire click pagina aperta
 
