@@ -48,6 +48,7 @@ const { location } = useGetLocation();
   @apply shadow;
   max-height: 100%;
   z-index: 9998;
+  filter: drop-shadow(0 -6mm 4mm rgb(0, 0, 0));
 
   img {
     @apply block mx-auto;
