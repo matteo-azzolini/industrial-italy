@@ -37,9 +37,10 @@ onMounted(async () => {
     minZoom: 5,
   }).addTo(map);
 
-  const icon = L.icon({
-    iconUrl: 'marker-icon.png',
-    iconAnchor: [10, 40],
+  const icon = L.divIcon({
+    className: 'my-custom-pin',
+    iconAnchor: [-15, 5],
+    html: '<span class="marker" />',
   });
 
   function addToMap(location: Location) {
@@ -89,5 +90,18 @@ onMounted(async () => {
 
 .leaflet-control-attribution a {
   color: white !important;
+}
+
+.marker {
+  @apply w-6 h-6;
+  @apply block relative;
+  @apply -left-6 -top-6;
+
+  @apply border border-white;
+  @apply bg-slate-600;
+  @apply hover:bg-slate-700;
+
+  border-radius: 3rem 3rem 0;
+  transform: rotate(45deg);
 }
 </style>
