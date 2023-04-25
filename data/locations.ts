@@ -24,13 +24,17 @@ export const locations: Record<string, Location> = {
     address: 'Via Stanislao Intini, 2, 27015 Landriano PV',
     link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',
   },
+  '40.5031921,17.2202768': {
+    name: 'Ilva',
+    lat: 40.5031921,
+    lng: 17.2202768,
+    img: '/ilva_mono.jpeg',
+    address: 'Via Appia SS km 648, 74123 Taranto TA',
+    link: 'https://goo.gl/maps/Mr3xxPDRLwASDCS89',
+  },
   // 44.3358694, 11.8686717
   // Villapana
   // Via Pana, 238/244, 48018 Faenza RA
-
-  // 40.5031921, 17.2202768
-  // Ilva
-  // Via Appia SS km 648, 74123 Taranto TA
 
   // Alcatara SPA
   // San Liberato / Narni
