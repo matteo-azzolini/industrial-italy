@@ -44,11 +44,19 @@ definePageMeta({
       utili per altri night owl explorer as my self.
     </p> -->
 
-    <h2>Contact</h2>
+    <!-- <Icon name="mdi:github" class="text-gray-400 group-hover:text-white" /> https://github.com/matteo-azzolini/industrial-italy -->
 
-    <ul>
-      <li>asd</li>
-      <li>qwe</li>
-    </ul>
+    <NuxtLink
+      to="https://github.com/matteo-azzolini/industrial-italy"
+      class="group flex items-center space-x-2"
+      target="_blank"
+    >
+      <Icon
+        name="mdi:github"
+        class="h-6 w-6"
+      />
+
+      <span class="block">Source code</span>
+    </NuxtLink>
   </div>
 </template>

@@ -1,47 +1,10 @@
-# Nuxt 3 Minimal Starter
+# Industrial italy
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Made with nuxt 3 · tailwindcss · leaflet
 
-## Setup
+[Watch live](https://industrial-italy.vercel.app)
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-
----
+## Work in progress
 
 nuxt 3
 ssr (state condiviso e transizione tra pagine)
