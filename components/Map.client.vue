@@ -38,9 +38,9 @@ onMounted(async () => {
   }).addTo(map);
 
   const icon = L.divIcon({
-    className: 'my-custom-pin',
+    className: 'my-marker',
     iconAnchor: [-15, 5],
-    html: '<span class="marker" />',
+    html: '<div class="marker" />',
   });
 
   function addToMap(location: Location) {
@@ -94,12 +94,12 @@ onMounted(async () => {
 
 .marker {
   @apply w-6 h-6;
-  @apply block relative;
+  @apply relative;
   @apply -left-6 -top-6;
 
   @apply border border-white;
-  @apply bg-slate-600;
-  @apply hover:bg-slate-700;
+  @apply bg-teal-600;
+  @apply hover:bg-teal-700;
 
   border-radius: 3rem 3rem 0;
   transform: rotate(45deg);
