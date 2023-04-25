@@ -43,6 +43,10 @@ export default defineNuxtConfig({
     // },
   },
 
+  // routeRules: {
+  //   '/about': { static: true },
+  // },
+
   typescript: {
     strict: true,
   },
