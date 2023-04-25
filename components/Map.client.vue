@@ -23,7 +23,9 @@ const zoom = location !== undefined ? 11 : 7;
 
 const container = ref<HTMLElement>();
 
-onMounted(() => {
+onMounted(async () => {
+  await nextTick();
+
   const map = new L.Map(container.value!, {
     center: new L.LatLng(lat, lng),
     zoom,

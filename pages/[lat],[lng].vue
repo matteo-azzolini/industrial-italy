@@ -15,7 +15,5 @@ function togglePane() {
 <template>
   <Location v-model="paneOpened" />
 
-  <ClientOnly>
-    <Map @select-location="togglePane" />
-  </ClientOnly>
+  <Map @select-location="togglePane" />
 </template>
