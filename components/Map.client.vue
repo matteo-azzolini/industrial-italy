@@ -40,7 +40,7 @@ onMounted(async () => {
 
   const icon = L.divIcon({
     className: 'marker',
-    iconAnchor: [-15, 5],
+    iconAnchor: [14, 15],
     html: marker,
   });
 
