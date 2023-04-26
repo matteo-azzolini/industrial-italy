@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import type { Location } from '~/data/locations';
 import { locations } from '~/data/locations';
+import marker from '~/assets/marker.svg?raw';
 
 const emit = defineEmits(['selectLocation']);
 
@@ -37,9 +38,10 @@ onMounted(async () => {
     minZoom: 5,
   }).addTo(map);
 
-  const icon = L.icon({
-    iconUrl: 'marker-icon.png',
-    iconAnchor: [10, 40],
+  const icon = L.divIcon({
+    className: 'marker',
+    iconAnchor: [14, 15],
+    html: marker,
   });
 
   function addToMap(location: Location) {
@@ -89,5 +91,10 @@ onMounted(async () => {
 
 .leaflet-control-attribution a {
   color: white !important;
+}
+
+.marker {
+  /* @apply h-10 w-10 !important; */
+  @apply text-emerald-400 hover:text-white;
 }
 </style>
