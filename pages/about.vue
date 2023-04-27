@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  titleTemplate: titleChunk => `About - ${titleChunk}`,
+});
+
 definePageMeta({
   pageTransition: {
     name: 'page',
