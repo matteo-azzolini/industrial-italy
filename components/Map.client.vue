@@ -28,11 +28,11 @@ onMounted(async () => {
   await nextTick();
 
   const map = new L.Map(container.value!, {
-    center: new L.LatLng(lat, lng),
-    zoom,
+    // center: new L.LatLng(lat, lng),
+    // zoom,
     zoomSnap: 0.25,
     zoomDelta: 1,
-    zoomControl: false,
+    // zoomControl: false,
   });
 
   L.tileLayer(MAP_TILE, {
@@ -79,8 +79,7 @@ onMounted(async () => {
     });
   }
 
-  map.fitBounds([[45.440193, 7.7850616], [40.5031921, 17.986]]);
-  // map.fitBounds([[45.440193, 8.7850616], [40.5031921, 17.2202768]]);
+  map.fitBounds([[46.440193, 7.7850616], [39.5031921, 17.986]]);
 
   Object.values(locations).forEach(addToMap);
 
