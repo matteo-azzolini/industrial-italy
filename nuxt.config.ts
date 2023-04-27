@@ -4,10 +4,9 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
     'nuxt-icon',
   ],
-
-  // css: ['leaflet/dist/leaflet.css'],
 
   app: {
     // keepalive: true,
@@ -24,15 +23,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/icon.png' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap' },
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'https://unpkg.com/leaflet@1.6.0/dist/leaflet.css',
-        // },
-
-        // {
-        //   rel: 'stylesheet',
-        //   href: 'leaflet/dist/leaflet.css',
-        // },
       ],
     },
 

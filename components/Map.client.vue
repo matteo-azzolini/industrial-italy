@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { useStorage } from '@vueuse/core';
 import type { Location } from '~/data/locations';
 import { locations } from '~/data/locations';
 import marker from '~/assets/marker.svg?raw';
@@ -24,6 +25,8 @@ const zoom = location !== undefined ? 11 : 7;
 
 const container = ref<HTMLElement>();
 
+const visitedLocations = useStorage<string[]>('industrial-italy.visited', []);
+
 onMounted(async () => {
   await nextTick();
 
@@ -38,13 +41,24 @@ onMounted(async () => {
     minZoom: 5,
   }).addTo(map);
 
-  const icon = L.divIcon({
-    className: 'marker',
+  const iconUnvisited = L.divIcon({
+    className: 'marker-unvisited',
+    iconAnchor: [14, 15],
+    html: marker,
+  });
+
+  const iconVisited = L.divIcon({
+    className: 'marker-visited',
     iconAnchor: [14, 15],
     html: marker,
   });
 
   function addToMap(location: Location) {
+    const locationKey = `${location.lat},${location.lng}`;
+    const visited = visitedLocations.value.includes(locationKey);
+
+    const icon = visited ? iconVisited : iconUnvisited;
+
     const marker = L.marker([location.lat, location.lng], { icon }).addTo(map);
 
     // TODO gestire click pagina aperta
@@ -56,6 +70,7 @@ onMounted(async () => {
     // }
 
     marker.on('click', () => {
+      visitedLocations.value.push(locationKey);
       emit('selectLocation');
       navigateTo({
         path: `/${location.lat.toString()},${location.lng.toString()}`,
@@ -94,7 +109,14 @@ onMounted(async () => {
 }
 
 .marker {
-  /* @apply h-10 w-10 !important; */
-  @apply text-emerald-400 hover:text-white;
+  @apply hover:text-white;
+}
+
+.marker-unvisited {
+  @apply marker text-emerald-400;
+}
+
+.marker-visited {
+  @apply marker text-purple-400;
 }
 </style>
