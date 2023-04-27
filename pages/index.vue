@@ -1,5 +1,3 @@
 <template>
-  <div class="h-full">
-    <Map />
-  </div>
+  <Map />
 </template>

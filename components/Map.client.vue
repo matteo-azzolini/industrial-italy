@@ -71,17 +71,9 @@ onMounted(async () => {
       marker.closePopup();
     });
 
-    // TODO gestire click pagina aperta
-
-    // marker.on('click', () => map.flyTo([location.lat, location.lng], 11));
-
-    // if (route.path === `/${location.lat.toString()},${location.lng.toString()}`) {
-    //   alert('ciao');
-    // }
-
     marker.on('click', () => {
       visitedLocations.value.push(locationKey);
-      emit('selectLocation');
+
       navigateTo({
         path: `/${location.lat.toString()},${location.lng.toString()}`,
       });

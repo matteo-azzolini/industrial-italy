@@ -1,19 +1,15 @@
 <script lang="ts" setup>
-defineProps<{ modelValue: boolean }>();
-defineEmits(['update:modelValue']);
-
 const { location } = useGetLocation();
 </script>
 
 <template>
   <Transition name="slide" appear>
-    <div v-if="modelValue" class="panel border-l border-gray-900">
+    <div class="panel border-l border-gray-900">
       <NuxtLink to="/">
         <Icon
           name="carbon-close"
           size="4em"
           class="absolute top-2 md:top-8 cursor-pointer text-gray-300 hover:text-white"
-          @click="$emit('update:modelValue', false)"
         />
       </NuxtLink>
 
