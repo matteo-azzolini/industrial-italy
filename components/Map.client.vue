@@ -61,6 +61,16 @@ onMounted(async () => {
 
     const marker = L.marker([location.lat, location.lng], { icon }).addTo(map);
 
+    marker.bindPopup(`<img src="${location.img}" />`);
+
+    marker.on('mouseover', () => {
+      marker.openPopup();
+    });
+
+    marker.on('mouseout', () => {
+      marker.closePopup();
+    });
+
     // TODO gestire click pagina aperta
 
     // marker.on('click', () => map.flyTo([location.lat, location.lng], 11));
@@ -118,5 +128,26 @@ onMounted(async () => {
 
 .marker-visited {
   @apply marker text-purple-400;
+}
+
+.leaflet-popup {
+  .leaflet-popup-content {
+    @apply m-0;
+    width: 250px;
+    @apply overflow-hidden;
+
+    img {
+      border-radius: 12px;
+    }
+  }
+
+  .leaflet-popup-content-wrapper,
+  .leaflet-popup-tip {
+    @apply bg-gray-800;
+  }
+
+  .leaflet-popup-close-button {
+    @apply invisible;
+  }
 }
 </style>
