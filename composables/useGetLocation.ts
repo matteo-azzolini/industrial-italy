@@ -1,10 +1,11 @@
 import type { Location } from '~/data/locations';
 import { locations } from '~/data/locations';
+import { getLocationKey } from '~/utils/getLocationKey';
 
 type GetLocation = {
   lat?: number
   lng?: number
-  location: Location
+  location?: Location
 };
 
 export default function (): GetLocation {
@@ -13,7 +14,8 @@ export default function (): GetLocation {
   const lat = +route.params.lat;
   const lng = +route.params.lng;
 
-  const locationKey = `${lat},${lng}`;
+  const locationKey = getLocationKey({ lat, lng });
+
   const location = locations[locationKey];
 
   return {

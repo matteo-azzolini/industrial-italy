@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { useStorage } from '@vueuse/core';
 import type { Location } from '~/data/locations';
 import { locations } from '~/data/locations';
 import marker from '~/assets/marker.svg?raw';
-
-const emit = defineEmits(['selectLocation']);
 
 // const MAP_TILE = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
 const MAP_TILE = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
@@ -25,7 +22,7 @@ const zoom = location !== undefined ? 11 : 7;
 
 const container = ref<HTMLElement>();
 
-const visitedLocations = useStorage<string[]>('industrial-italy.visited', []);
+const visitedLocations = useVisitedLocations();
 
 onMounted(async () => {
   await nextTick();
@@ -54,10 +51,11 @@ onMounted(async () => {
   });
 
   function addToMap(location: Location) {
-    const locationKey = `${location.lat},${location.lng}`;
-    const visited = visitedLocations.value.includes(locationKey);
+    const locationKey = getLocationKey(location);
 
-    const icon = visited ? iconVisited : iconUnvisited;
+    const isVisited = visitedLocations.isVisited(locationKey);
+
+    const icon = isVisited ? iconVisited : iconUnvisited;
 
     const marker = L.marker([location.lat, location.lng], { icon }).addTo(map);
 
@@ -72,11 +70,9 @@ onMounted(async () => {
     });
 
     marker.on('click', () => {
-      visitedLocations.value.push(locationKey);
+      visitedLocations.add(locationKey);
 
-      navigateTo({
-        path: `/${location.lat.toString()},${location.lng.toString()}`,
-      });
+      navigateTo({ path: `/${locationKey}` });
     });
   }
 
