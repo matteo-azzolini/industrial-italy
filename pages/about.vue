@@ -13,7 +13,7 @@ definePageMeta({
 
 <template>
   <div
-    class="prose prose-invert pt-20 sm:max-w-2xl max-w-5xl
+    class="prose prose-invert pt-20 pb-20 sm:max-w-2xl max-w-5xl
       mx-auto px-6 md:px-0"
   >
     <h1>I like industrial buildings</h1>
