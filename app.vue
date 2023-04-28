@@ -20,17 +20,13 @@ html,
 body,
 #__nuxt {
   @apply bg-soft-black text-white;
-
-  height: 100%;
-  margin: 0;
+  @apply h-full;
 
   font-size: 16px;
 }
 
 main {
-  /* height: calc(100% - 50px); */
-  /* TODO overflow dovuto all'animazione */
-  @apply h-full overflow-hidden;
+  @apply h-full;
 }
 
 .page-enter-active,
