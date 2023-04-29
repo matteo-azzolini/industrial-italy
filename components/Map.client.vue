@@ -27,9 +27,12 @@ const visitedLocations = useVisitedLocations();
 onMounted(async () => {
   await nextTick();
 
+  const center = location !== undefined ? new L.LatLng(lat, lng) : undefined;
+
   const map = new L.Map(container.value!, {
-    center: new L.LatLng(lat, lng),
+    center,
     zoom,
+    zoomSnap: 0.25,
   });
 
   L.tileLayer(MAP_TILE, {
@@ -74,6 +77,11 @@ onMounted(async () => {
 
       navigateTo({ path: `/${locationKey}` });
     });
+  }
+
+  if (!location) {
+    // TODO mobile  map.fitBounds([[46.440193, 7.7850616], [38.5031921, 17.986]]);
+    map.fitBounds([[46.440193, 7.7850616], [39.5031921, 17.986]]);
   }
 
   Object.values(locations).forEach(addToMap);
