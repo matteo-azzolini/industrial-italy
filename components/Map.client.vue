@@ -27,12 +27,12 @@ const visitedLocations = useVisitedLocations();
 onMounted(async () => {
   await nextTick();
 
+  const center = location !== undefined ? new L.LatLng(lat, lng) : undefined;
+
   const map = new L.Map(container.value!, {
-    // center: new L.LatLng(lat, lng),
-    // zoom,
+    center,
+    zoom,
     zoomSnap: 0.25,
-    zoomDelta: 1,
-    // zoomControl: false,
   });
 
   L.tileLayer(MAP_TILE, {
@@ -79,7 +79,8 @@ onMounted(async () => {
     });
   }
 
-  map.fitBounds([[46.440193, 7.7850616], [39.5031921, 17.986]]);
+  if (!location)
+    map.fitBounds([[46.440193, 7.7850616], [39.5031921, 17.986]]);
 
   Object.values(locations).forEach(addToMap);
 
