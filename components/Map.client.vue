@@ -102,7 +102,20 @@ onMounted(async () => {
 
 <style lang="postcss">
 .leaflet-control-zoom {
-  margin-top: 50px !important;
+  @apply mt-6 sm:mt-12 !important;
+
+  a {
+    @apply bg-gray-800 hover:bg-gray-700;
+    @apply text-gray-300;
+
+    &:first-child {
+      @apply border-gray-700;
+    }
+
+    &.leaflet-disabled {
+      @apply bg-gray-600;
+    }
+  }
 }
 
 .leaflet-control-attribution {

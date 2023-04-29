@@ -1,9 +1,12 @@
 <template>
-  <Navbar />
+  <!-- TODO togliere commento -->
+  <!-- <Navbar class="invisible sm:visible" /> -->
 
   <main>
     <NuxtPage />
   </main>
+
+  <MobileNavbar class="visible sm:invisible" />
 </template>
 
 <style lang="postcss">
