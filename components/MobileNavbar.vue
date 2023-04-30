@@ -25,18 +25,14 @@
 <style lang="postcss">
 /* TODO Scoped */
 .mobile-nav {
-  @apply absolute bottom-0;
-  /* @apply block; */
+  @apply fixed bottom-0;
   @apply w-full;
   @apply flex justify-around items-center;
   @apply px-10;
   z-index: 9999;
-  @apply border-t border-gray-900;
+  @apply border-t border-gray-800;
 
-  @apply bg-gray-900;
-  /* @apply bg-red-500; */
-  /* @apply bg-soft-black; */
-  /* @apply bg-blue-400; */
+  @apply bg-soft-black;
 
   a {
     @apply flex flex-col items-center justify-normal;
@@ -51,14 +47,9 @@
       @apply text-gray-300;
 
       svg {
-        /* @apply text-gray-100; */
         @apply text-white;
       }
     }
   }
-}
-
-nav {
-  background: linear-gradient(#000, #0F0F0F00 90%);
 }
 </style>
