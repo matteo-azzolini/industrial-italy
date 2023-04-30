@@ -27,7 +27,7 @@
 .mobile-nav {
   @apply fixed bottom-0;
   @apply w-full;
-  @apply flex justify-around items-center;
+  @apply justify-around items-center;
   @apply px-10;
   z-index: 9999;
   @apply border-t border-gray-800;
