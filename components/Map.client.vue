@@ -80,7 +80,7 @@ onMounted(async () => {
   }
 
   if (!location)
-    map.fitBounds([[46.440193, 7.7850616], [38.5031921, 17.986]]);
+    map.fitBounds([[46.440193, 7.7850616], [36.5031921, 17.986]]);
     // TODO desktop map.fitBounds([[46.440193, 7.7850616], [39.5031921, 17.986]]);
 
   Object.values(locations).forEach(addToMap);
