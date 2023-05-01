@@ -1,9 +1,11 @@
 <template>
-  <Navbar />
+  <Navbar class="hidden sm:flex" />
 
   <main>
     <NuxtPage />
   </main>
+
+  <MobileNavbar class="flex sm:hidden" />
 </template>
 
 <style lang="postcss">

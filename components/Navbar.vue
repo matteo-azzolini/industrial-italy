@@ -14,11 +14,11 @@
   </nav>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 nav {
   @apply absolute;
   @apply w-full;
-  @apply flex justify-end;
+  @apply justify-end;
   @apply px-10;
   height: 50px;
   z-index: 9999;
