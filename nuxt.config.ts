@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   ssr: true,
 
   modules: [
+    '@nuxtjs/device',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'nuxt-icon',
