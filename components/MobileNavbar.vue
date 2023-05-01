@@ -1,10 +1,5 @@
 <template>
   <nav class="mobile-nav">
-    <!--
-      TODO workaround
-      <a> over nuxt link to reload position
-      ref https://github.com/nuxt/nuxt/issues/7369#issuecomment-898604704
-    -->
     <NuxtLink to="/">
       <Icon
         name="humbleicons:location"
