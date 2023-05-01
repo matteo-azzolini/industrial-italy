@@ -17,9 +17,8 @@
   </nav>
 </template>
 
-<style lang="postcss">
-/* TODO Scoped */
-.mobile-nav {
+<style lang="postcss" scoped>
+nav {
   @apply fixed bottom-0;
   @apply w-full;
   @apply justify-around items-center;

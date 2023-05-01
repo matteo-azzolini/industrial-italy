@@ -1,5 +1,5 @@
 <template>
-  <nav class="desktop-nav">
+  <nav>
     <!--
       TODO workaround
       <a> over nuxt link to reload position
@@ -14,9 +14,8 @@
   </nav>
 </template>
 
-<style lang="postcss">
-/* TODO scoped */
-.desktop-nav {
+<style lang="postcss" scoped>
+nav {
   @apply absolute;
   @apply w-full;
   @apply justify-end;
