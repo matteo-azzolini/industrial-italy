@@ -22,11 +22,10 @@ const { location } = useGetLocation();
 
         <NuxtLink
           :to="location.link"
-          class="group flex items-center space-x-2"
+          class="block w-fit underline font-medium"
           target="_blank"
         >
-          <span class="block group-hover:underline ">{{ location.address }}</span>
-          <Icon name="humbleicons:external-link" class="text-gray-400 group-hover:text-white" />
+          {{ location.address }}
         </NuxtLink>
       </div>
     </div>
