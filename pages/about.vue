@@ -51,7 +51,7 @@ definePageMeta({
 
     <NuxtLink
       to="https://github.com/matteo-azzolini/industrial-italy"
-      class="group flex items-center space-x-2"
+      class="w-fit flex items-center space-x-2"
       target="_blank"
     >
       <Icon
