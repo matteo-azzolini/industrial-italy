@@ -1,5 +1,5 @@
 <template>
-  <Navbar class="hidden sm:flex" />
+  <DesktopNavbar class="hidden sm:flex" />
 
   <main>
     <NuxtPage />

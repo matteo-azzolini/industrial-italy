@@ -90,14 +90,6 @@ onMounted(async () => {
   }
 
   Object.values(locations).forEach(addToMap);
-
-  // TODO clean
-  setTimeout(() => map.invalidateSize(true), 500);
-  // map.invalidateSize(true);
-
-  // https://stackoverflow.com/questions/73870844/nuxt-vue3-leaflet-window-is-not-defined
-
-  // https://github.com/vue-leaflet/vue-leaflet
 });
 </script>
 

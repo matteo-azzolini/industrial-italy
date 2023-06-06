@@ -2,13 +2,16 @@
 const { isMobile } = useDevice();
 const { location } = useGetLocation();
 
+if (location === undefined)
+  navigateTo('/');
+
 useHead({
-  titleTemplate: titleChunk => `${location.name} - ${titleChunk}`,
+  titleTemplate: titleChunk => `${location!.name} - ${titleChunk}`,
 });
 </script>
 
 <template>
-  <Location />
+  <Location :location="location!" />
 
   <Map v-if="!isMobile" />
 </template>

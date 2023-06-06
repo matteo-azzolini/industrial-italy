@@ -1,5 +1,9 @@
 <script lang="ts" setup>
-const { location } = useGetLocation();
+import type { Location } from '~/data/locations';
+
+defineProps<{
+  location: Location
+}>();
 </script>
 
 <template>
@@ -35,9 +39,6 @@ const { location } = useGetLocation();
 <style lang="postcss">
 .panel {
   @apply absolute right-0 overflow-auto;
-  /* @apply pt-20 px-4; */
-  /* @apply h-full;
-  @apply  w-full md:w-3/4 lg:w-2/3 xl:max-w-4xl; */
   @apply h-full w-full md:w-3/4 lg:w-2/3 xl:w-1/2;
   @apply bg-soft-black;
   @apply shadow;
@@ -46,13 +47,10 @@ const { location } = useGetLocation();
   filter: drop-shadow(0 -6mm 4mm rgb(0, 0, 0));
 
   img {
+    @apply w-full;
     @apply block mx-auto;
-    /* @apply opacity-100; */
     max-height: 100%;
     height: auto;
-    width: auto;
-    /* transform: translate(-51%, -51%); */
-    /* z-index: 9999; */
   }
 }
 
