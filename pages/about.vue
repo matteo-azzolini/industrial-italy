@@ -3,12 +3,12 @@ useHead({
   titleTemplate: titleChunk => `About - ${titleChunk}`,
 });
 
-definePageMeta({
-  pageTransition: {
-    name: 'page',
-    mode: 'out-in',
-  },
-});
+// definePageMeta({
+//   pageTransition: {
+//     name: 'page',
+//     mode: 'out-in',
+//   },
+// });
 </script>
 
 <template>
