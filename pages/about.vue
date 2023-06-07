@@ -13,7 +13,7 @@ useHead({
 
 <template>
   <div
-    class="prose prose-invert pt-10 sm:pt-20 pb-20 sm:max-w-2xl max-w-5xl
+    class="prose prose-invert pt-10 sm:pt-24 pb-20 max-w-5xl sm:max-w-2xl xl:max-w-4xl
       mx-auto px-6 md:px-0"
   >
     <h1>Industrial italy</h1>
@@ -52,9 +52,9 @@ useHead({
 </template>
 
 <style lang="postcss" scoped>
-@media (min-width: 1250px) {
+@media (min-width: 1280px) {
   div {
-    font-size: 19px;
+    font-size: 18px;
   }
 }
 </style>
