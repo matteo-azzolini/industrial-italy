@@ -14,7 +14,8 @@ useHead({
 <template>
   <div
     class="prose prose-invert pt-10 sm:pt-24 pb-20 max-w-5xl sm:max-w-2xl xl:max-w-4xl
-      mx-auto px-6 md:px-0"
+      mx-auto px-6 md:px-0
+      z-10"
   >
     <h1>Industrial italy</h1>
 
@@ -50,11 +51,3 @@ useHead({
     <span class="mt-20 block text-sm text-center">Made with 🤍 by Matteo Azzolini</span>
   </div>
 </template>
-
-<style lang="postcss" scoped>
-@media (min-width: 1280px) {
-  div {
-    font-size: 18px;
-  }
-}
-</style>
