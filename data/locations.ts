@@ -30,7 +30,7 @@ export const locations: Record<string, Location> = {
     lng: 17.2202768,
     img: '/ilva_mono.jpeg',
     address: 'Via Appia SS km 648, 74123 Taranto TA',
-    link: 'https://goo.gl/maps/FjizA5R3ijPVtoFY69',
+    link: 'https://goo.gl/maps/CuG7jChhNYDxqvF38',
   },
   // 44.3358694, 11.8686717
   // Villapana
