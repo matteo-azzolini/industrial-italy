@@ -18,17 +18,8 @@ const vantaInstance = ref();
 
 const vantaRef = ref();
 
-// const lowlightColor = '#454545';
-const FOG_COLOR = '#a3a3a3';
-
-// const b = '#444';
-// const b = '#414141';
+const FOG_COLOR = '#fafafa';
 const BLACK = '#3C3C3C';
-// const b = '#333';
-// const b = '#000';
-
-// const b = '#0F0F0F';
-// const b = 'trasparent';
 
 if (!isMobile) {
   onMounted(() => {
