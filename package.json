@@ -24,7 +24,7 @@
     "eslint": "^8.46.0",
     "lint-staged": "^15.0.2",
     "nuxt": "^3.11.2",
-    "nuxt-icon": "^0.4.1"
+    "nuxt-icon": "^0.6.10"
   },
   "lint-staged": {
     "*": "npm run lint"
